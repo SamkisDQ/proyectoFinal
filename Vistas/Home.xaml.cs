@@ -46,7 +46,6 @@ public partial class Home : ContentPage
     public async void obtener()
     {
         listaRegistro.ItemsSource = await registro.obtener();
-
     }
 
     protected override void OnDisappearing()
