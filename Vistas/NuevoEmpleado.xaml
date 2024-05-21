@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyectoFinal.Vistas.NuevoEmpleado"
+                         Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+                    >
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Path Grid.Row="0" Margin="-20,0" Data="m132.34,154.23002l209.00002,0l0,0.66666c-66.50001,28 -156.50001,72.87853 -209.00002,96.76573l0,-97.43239z"
+                          Stroke="Orange" Fill="Orange" HeightRequest="220" Aspect="Fill" ></Path>
+                    <Image Grid.Row="1" Margin="0" Source="logo.png" Aspect="AspectFit"  HeightRequest="80" WidthRequest="250"></Image>
+                    <Label Grid.Row="2" Margin="0,-15,0,0" Text="Registrar un Empleado" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="3" Margin="0,-15,0,0" Text="Nombre:" TextColor="#1C375C"  ></Label>
+                    <Entry Grid.Row="3" x:Name="txt_nombre" TextColor="Black" Placeholder="Ingresa el Nombre" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Label Grid.Row="4" Margin="0,-15,0,0" Text="Apellido:" TextColor="#1C375C"  ></Label>
+                    <Entry Grid.Row="4" x:Name="txt_apellido" TextColor="Black" Placeholder="Ingresa el Apellido" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Label Grid.Row="5" Margin="0,-15,0,0" Text="Cédula:" TextColor="#1C375C"  ></Label>
+                    <Entry Grid.Row="5" x:Name="txt_cedula" TextColor="Black" Placeholder="Ingresa la Cédula" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Label Grid.Row="6" Margin="0,-15,0,0" Text="Edad:" TextColor="#1C375C"  ></Label>
+                    <Entry Grid.Row="6" x:Name="txt_edad" Keyboard="Numeric" TextColor="Black" Placeholder="Ingresa la Edad" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Button Grid.Row="7" x:Name="btn_registrar" TextColor="White" Text="Registrar" BackgroundColor="#1C375C" CornerRadius="20" Clicked="btn_registrar_Clicked"></Button>
+                    <Path Grid.Row="8" Margin="-20,0" Data="m333.5114,204.27502l115.48359,-59l-0.00813,123.08816c-101.06176,0.76114 -113.03789,-0.51177 -246.99185,-0.49297l131.51639,-63.59519z"
+                          Stroke="Orange" Fill="Orange" HeightRequest="220" Aspect="Fill" ></Path>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

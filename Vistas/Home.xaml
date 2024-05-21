@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyectoFinal.Vistas.Home"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="white">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Margin="0" Source="logo.png" Aspect="AspectFit"  HeightRequest="80" WidthRequest="250"></Image>
+                <Frame Grid.Row="1" Margin="0,0,0,-60" BorderColor="Orange" BackgroundColor="Orange" HasShadow="True"  CornerRadius="50" >
+                    <Grid HorizontalOptions="FillAndExpand"  RowSpacing="20" Padding="20,10,20,80">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ImageButton x:Name="btn_buscar" Grid.Row="0" Margin="0, 0,-10,0" Source="search.png" Aspect="AspectFit"  BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" Clicked="btn_buscar_Clicked"></ImageButton>
+                        <ImageButton x:Name="btn_login" Grid.Row="0" Margin="-10,0,0,0" Source="setting.png" Aspect="AspectFit"  BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30" HorizontalOptions="Start" Clicked="btn_login_Clicked"></ImageButton>
+                        <Label Grid.Row="1" x:Name="DateLabel" FontSize="20" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        <Label Grid.Row="2" x:Name="TimeLabel" FontSize="20" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        <Entry Grid.Row="3" x:Name="txt_cedula" Placeholder="Ingresa la Cedula" Margin="0,20,0,0" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" TextColor="Black"></Entry>
+                        <Button Grid.Row="4" x:Name="btn_timbrar" Clicked="btn_timbrar_Clicked" Text="Timbrar" BackgroundColor="#1C375C"  TextColor="white" CornerRadius="20"></Button>
+                        <StackLayout Grid.Row="5" HorizontalOptions="CenterAndExpand"  Spacing="0">
+                            <CollectionView x:Name="listaRegistro" SelectionMode="None">
+                                <CollectionView.Header>
+                                    <Frame BorderColor="orange" BackgroundColor="CadetBlue" CornerRadius="0" Padding="10" Margin="0">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="Nombres" TextColor="White" Grid.Column="0" HorizontalOptions="Center" />
+                                            <Label Text="Apellidos" TextColor="White" Grid.Column="1" HorizontalOptions="Center" />
+                                            <Label Text="Fecha" TextColor="White" Grid.Column="2" HorizontalOptions="Center" />
+                                        </Grid>
+                                    </Frame>
+                                </CollectionView.Header>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame BorderColor="BlanchedAlmond" BackgroundColor="White" CornerRadius="0" Padding="10" Margin="0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding empleado.nombre}" Grid.Column="0" HorizontalOptions="Center" TextColor="Black"/>
+                                                <Label Text="{Binding empleado.apellido}" Grid.Column="1" HorizontalOptions="Center" TextColor="Black"/>
+                                                <Label Text="{Binding fecha}" Grid.Column="2" HorizontalOptions="Center" TextColor="Black"/>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                        <AbsoluteLayout x:Name="loadingOverlay"  HorizontalOptions="FillAndExpand" IsVisible="false" BackgroundColor="Transparent" Margin="50,0,50,0" Padding="0,0,0,0"  AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                <Label Text="Espera un momento..." Padding="0,0,15,0" VerticalOptions="Center" TextColor="#1C375C"/>
+                                <ActivityIndicator IsRunning="True" Color="#1C375C" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </AbsoluteLayout>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
