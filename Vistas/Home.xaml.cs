@@ -61,8 +61,6 @@ public partial class Home : ContentPage
     {
         base.OnAppearing();
         StartTimer();
-
-
     }
 
 
@@ -126,7 +124,6 @@ public partial class Home : ContentPage
             {
                 Console.WriteLine($"Ubicación actual: Latitude: {location.Latitude}, Longitude: {location.Longitude}");
             }
-
             return location;
         }
         catch (FeatureNotSupportedException fnsEx)
